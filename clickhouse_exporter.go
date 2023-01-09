@@ -15,8 +15,8 @@ import (
 var (
 	listeningAddress    = flag.String("telemetry.address", ":9116", "Address on which to expose metrics.")
 	metricsEndpoint     = flag.String("telemetry.endpoint", "/metrics", "Path under which to expose metrics.")
-	clickhouseScrapeURI = flag.String("scrape_uri", "http://localhost:8123/", "URI to clickhouse http endpoint")
-	clickhouseOnly      = flag.Bool("clickhouse_only", false, "Expose only Clickhouse metrics, not metrics from the exporter itself")
+	clickhouseScrapeURI = flag.String("scrape_uri", os.Getenv("SCRAPE_URI"), "URI to clickhouse http endpoint")
+	clickhouseOnly      = flag.Bool("clickhouse_only", true, "Expose only Clickhouse metrics, not metrics from the exporter itself")
 	insecure            = flag.Bool("insecure", true, "Ignore server certificate if using https")
 	user                = os.Getenv("CLICKHOUSE_USER")
 	password            = os.Getenv("CLICKHOUSE_PASSWORD")
