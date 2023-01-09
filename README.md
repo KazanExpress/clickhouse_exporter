@@ -21,6 +21,12 @@ via environment variables
 CLICKHOUSE_USER
 CLICKHOUSE_PASSWORD
 ```
+URI to clickhouse http endpoint (if not default):
+
+via environment variable
+```
+SCRAPE_URI
+```
 
 ## Build Docker image
 ```
